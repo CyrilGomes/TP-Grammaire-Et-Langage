@@ -1,0 +1,2 @@
+di = Décalage, pointe vers un etat
+Ri = Réduction pointe sur une règle -> nb de symbole
