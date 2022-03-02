@@ -1,11 +1,15 @@
 #include <iostream>
 #include "lexer.h"
 #include "automate.h"
-
-int main(void)
+#include <string>
+int main(int argc, char * argv[])
 {
 
-   string chaine("(1+34)*123");
+   string chaine;
+   cout << "Entrez la chaine >> ";
+   std::getline(cin,chaine);
+   //string chaine("(1+34)*123");
+   //string chaine("(9*9)");
    /*
    Lexer l(chaine);
 
@@ -19,6 +23,6 @@ int main(void)
       */
 
    Automate automate(chaine);
-   automate.Evaluer();
+   automate.Parse();
    return 0;
 }

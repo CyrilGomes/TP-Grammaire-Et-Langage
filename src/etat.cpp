@@ -2,180 +2,191 @@
 
 void Etat0::transition(Automate &automate, Symbole *symbole)
 {
-    cout<<"ETAT0"<<endl;
+    ////cout << "ETAT0" << endl;
     switch (*symbole)
     {
     case INT:
         automate.Decaler(symbole, new Etat3);
-        break;
+        return;
     case OPENPAR:
         automate.Decaler(symbole, new Etat2);
-        break;
+        return;
     case EXP:
         automate.Empiler(symbole, new Etat1);
-        break;
+        return;
     }
+    automate.Erreur();
 }
 
 void Etat1::transition(Automate &automate, Symbole *symbole)
 {
-        cout<<"ETAT1"<<endl;
+    ////cout << "ETAT1" << endl;
     switch (*symbole)
     {
     case PLUS:
         automate.Decaler(symbole, new Etat4);
-        break;
+        return;
     case MULT:
         automate.Decaler(symbole, new Etat5);
-        break;
+        return;
     case FIN:
-        break;
+        cout << "TERMINE " << ((Expression *)automate.pileSymboles.top())->GetValue() << endl;
+        return;
     }
+    automate.Erreur();
 }
 
 void Etat2::transition(Automate &automate, Symbole *symbole)
 {
-        cout<<"ETAT2"<<endl;
+    ////cout << "ETAT2" << endl;
     switch (*symbole)
     {
     case INT:
         automate.Decaler(symbole, new Etat3);
-        break;
+        return;
     case OPENPAR:
         automate.Decaler(symbole, new Etat2);
-        break;
+        return;
     case EXP:
         automate.Empiler(symbole, new Etat6);
-        break;
+        return;
     }
+    automate.Erreur();
 }
 
 void Etat3::transition(Automate &automate, Symbole *symbole)
 {
-        cout<<"ETAT3"<<endl;
+    ////cout << "ETAT3" << endl;
     switch (*symbole)
     {
     case PLUS:
         automate.Reduire(1, symbole);
-        break;
+        return;
     case MULT:
         automate.Reduire(1, symbole);
-        break;
+        return;
     case CLOSEPAR:
         automate.Reduire(1, symbole);
-        break;
+        return;
     case FIN:
         automate.Reduire(1, symbole);
-        break;
+        return;
     }
+    automate.Erreur();
 }
 
 void Etat4::transition(Automate &automate, Symbole *symbole)
 {
-        cout<<"ETAT4"<<endl;
+    ////cout << "ETAT4" << endl;
     switch (*symbole)
     {
     case INT:
         automate.Decaler(symbole, new Etat3);
-        break;
+        return;
     case OPENPAR:
         automate.Decaler(symbole, new Etat2);
-        break;
+        return;
     case EXP:
         automate.Empiler(symbole, new Etat7);
-        break;
+        return;
     }
+    automate.Erreur();
 }
 
 void Etat5::transition(Automate &automate, Symbole *symbole)
 {
-        cout<<"ETAT5"<<endl;
+    ////cout << "ETAT5" << endl;
     switch (*symbole)
     {
     case INT:
         automate.Decaler(symbole, new Etat3);
-        break;
+        return;
     case OPENPAR:
         automate.Decaler(symbole, new Etat2);
-        break;
+        return;
     case EXP:
         automate.Empiler(symbole, new Etat8);
-        break;
+        return;
     }
+    automate.Erreur();
 }
 
 void Etat6::transition(Automate &automate, Symbole *symbole)
 {
-        cout<<"ETAT6"<<endl;
+    ////cout << "ETAT6" << endl;
     switch (*symbole)
     {
     case PLUS:
         automate.Decaler(symbole, new Etat4);
-        break;
+        return;
     case MULT:
         automate.Decaler(symbole, new Etat5);
-        break;
+        return;
     case CLOSEPAR:
         automate.Decaler(symbole, new Etat9);
-        break;
+        return;
     }
+    automate.Erreur();
 }
 
 void Etat7::transition(Automate &automate, Symbole *symbole)
 {
-        cout<<"ETAT7"<<endl;
+    ////cout << "ETAT7" << endl;
     switch (*symbole)
     {
     case PLUS:
         automate.Reduire(3, symbole);
-        break;
+        return;
     case MULT:
         automate.Decaler(symbole, new Etat5);
-        break;
+        return;
     case CLOSEPAR:
         automate.Reduire(3, symbole);
-        break;
+        return;
     case FIN:
         automate.Reduire(3, symbole);
-        break;
+        return;
     }
+    automate.Erreur();
 }
 
 void Etat8::transition(Automate &automate, Symbole *symbole)
 {
-        cout<<"ETAT8"<<endl;
+    //cout << "ETAT8" << endl;
     switch (*symbole)
     {
     case PLUS:
         automate.Reduire(3, symbole);
-        break;
+        return;
     case MULT:
         automate.Reduire(3, symbole);
-        break;
+        return;
     case CLOSEPAR:
         automate.Reduire(3, symbole);
-        break;
+        return;
     case FIN:
         automate.Reduire(3, symbole);
-        break;
+        return;
     }
+    automate.Erreur();
 }
 void Etat9::transition(Automate &automate, Symbole *symbole)
 {
-        cout<<"ETAT9"<<endl;
+    //cout << "ETAT9" << endl;
     switch (*symbole)
     {
     case PLUS:
         automate.Reduire(3, symbole);
-        break;
+        return;
     case MULT:
         automate.Reduire(3, symbole);
-        break;
+        return;
     case CLOSEPAR:
         automate.Reduire(3, symbole);
-        break;
+        return;
     case FIN:
         automate.Reduire(3, symbole);
-        break;
+        return;
     }
+    automate.Erreur();
 }

@@ -12,7 +12,8 @@ enum Identificateurs
    INT,
    FIN,
    ERREUR,
-   EXP
+   EXP,
+
 };
 
 const string Etiquettes[] = {"OPENPAR", "CLOSEPAR", "PLUS", "MULT", "INT", "FIN", "ERREUR", "EXPRESSION"};

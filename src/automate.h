@@ -13,6 +13,7 @@ class Automate
 {
 private:
     Lexer lexer;
+    string chaine;
 
 public:
     Automate(string chaine);
@@ -23,7 +24,10 @@ public:
     void Decaler(Symbole*, Etat*);
     void Reduire(int, Symbole*);
 
-    int Evaluer();
+    int Parse();
+    int Evaluer(int n, Symbole* symboles[]);
+
+    void Erreur();
 
     ~Automate();
 };
