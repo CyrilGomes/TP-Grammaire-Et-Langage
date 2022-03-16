@@ -1,0 +1,12 @@
+toolsets = gnu;
+program lalr {
+    sources {
+        src/main.cpp
+        src/automate.cpp
+        src/etat.cpp
+        src/lexer.cpp
+        src/symbole.cpp
+    }
+    includedirs = ./src;
+    builddir = ./bin;
+}
