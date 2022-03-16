@@ -1,5 +1,5 @@
 # Grammaire et Languages INSA 4IF
-#### TP de compilation : Analyse syntaxique et évaluation d’une expression arithmétique
+### TP de compilation : Analyse syntaxique et évaluation d’une expression arithmétique
 
 Étudiants :
 - Cyril GOMES
