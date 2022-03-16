@@ -13,7 +13,7 @@ Ce projet est notre implémentation de l'analyseur ascendant LALR(1) permettant 
 
 ## Éxecution du projet
 
-À la racine du projet, utiliser make :
+À la racine du projet, utiliser GNU Make :
 ```bash
 make all
 ```
